@@ -1,0 +1,169 @@
+
+
+.heading {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 999;
+    border-bottom: 2px solid #010000;
+    background: $white;
+    padding: var(--bs-navbar-padding-y) 0;
+    --bs-navbar-padding-y: 20px;
+    @include transition;
+    @include mmd {
+        --bs-navbar-padding-y: 15px;
+    }
+    &.position-fixed {
+        z-index: 999;
+        width: 100%;
+        top: 0;
+        animation: headerAnimation .5s linear;
+        --bs-navbar-padding-y: 10px;
+        @include mmd {
+            --bs-navbar-padding-y: 10px;
+        }
+    }
+    &-menu {
+        width: max-content;
+        padding: 4px;
+        border-radius: 8px;
+        border: 1px solid #0B0903;
+        @include mmd {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            max-width: 100%;
+            height: 100vh;
+            background-color: rgba($color: #FFEA73, $alpha: .95);
+            padding: 24px 16px;
+            transform: translateY(100%);
+            @include transition;
+            z-index: 9999;
+            border-radius: 0px;
+            &.show-menu {
+                transform: translate(0, 0);
+            }
+        }
+        & .title {
+            margin-bottom: 32px;
+            @include sm {
+                margin-bottom: 24px;
+            }
+        }
+        & .heading-actions {
+            @include mmd {
+                margin-top: 32px;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            @include sm {
+                margin-top: 26px;
+            }
+        }
+    }
+    &-link {
+        font-size: 22px;
+        color: $paragraph;
+        display: block;
+        padding: 10px 16px;
+        padding-bottom: 6px;
+        border-radius: 4px;
+        cursor: pointer;
+        @include lg {
+            padding: 10px 12px;
+        }
+        @include mmd {
+            font-weight: 600;
+            line-height: 160%;
+            background: transparent;
+            box-shadow: none;    
+            letter-spacing: 1px;       
+        }
+        &:hover,
+        &.active {
+            color: $white;
+            background: #0B0903;
+        }
+    }
+    &-actions {
+        grid-gap: 12px;
+        @include sm {
+            grid-gap: 8px;
+        }
+    }
+  
+    &-toggler {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        color: $heading;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & svg {
+            --width: 40px;
+            color: $black;
+            width: var(--width);
+            height: var(--width);
+            @include sm {
+                --width: 32px;
+            }
+        }
+    }
+    .logo{
+        img {
+            max-width: 223px;
+            @include sm{
+            max-width: 180px; 
+            }
+            @media(max-width:480px) {
+                max-width: 145px; 
+            }
+        }
+    }
+    .socials {
+        margin-top: 0px;
+        margin-right: 285px;
+        @media(min-width:2020px){
+            margin-right: 50px;
+        }
+        @media(min-width:2120px){
+            margin-right: 0px;
+        }
+        @include xxl{
+            margin-right: 265px;
+        }
+        @include lg{
+            margin-right: 265px;
+        }
+        a{
+            border-radius: 8px;
+            padding: 10px;
+            img{
+                height: 25px;
+                width: 25px;
+            }
+        }
+        a:hover{
+            background: #FFEA73;
+            color: $accent;
+        }
+        @include sm{
+            a{
+                height: 50px;
+                width: max-content;
+            }
+        }
+    }
+    .boxed-btn{
+        padding: 10px 24px;
+        font-size: 20px;
+        padding-bottom: 7px;
+        height: 50px;
+    }
+}
+
+.heading.position-fixed .gtranslate_wrapper.large .gt_switcher_wrapper {
+    top: 16px !important;
+}

@@ -1,0 +1,227 @@
+.banner {
+    position: relative;
+    padding-top: 190px;
+    padding-bottom: 65px;
+    @include mmd {
+        padding-top: 180px;
+        padding-bottom: 80px;
+    }
+    @include ssm {
+        padding-top: 120px;
+        background-image: url('../img/Mobilehomeback.jpg');
+        background-size: 100% 100%;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+    &-social {
+        width: 218px;
+        height: 140px;
+        background-image: url(/src/assets/img/social-bg.png);
+        background-size: 100% 100%;
+        background-position: center;
+        padding-bottom: 20px;
+        bottom: calc(7% + -2px);
+        right: 7%;
+        transform: rotate(3deg);
+        @include xxl {
+            bottom: 4%;
+        }
+        @include xl {
+            bottom: calc(5% - 4px);
+            transform: rotate(5deg);
+        }
+        @include lg {
+            bottom: calc(4% + 7px);
+            transform: rotate(9deg);
+        }
+        @include md {
+            bottom: calc(4% + 8px);
+            transform: rotate(13deg);
+        }
+    }
+    &::before {
+        @include sm {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba($color: #C8B258, $alpha: 0.3);
+            z-index: 1;
+        }
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        right: 7%;
+        top: 20.8%;
+        width: 40%;
+        height: 100px;
+        background-image: url('../img/animated-christmas-light-gif-4.gif');
+        background-position: top right;
+        background-repeat: repeat;
+        background-size: contain;
+        transform: rotate(4deg);
+        z-index: -1;
+        @include xl {
+            top: 19.8%;
+            height: 80px;
+        }
+        @include lg {
+            height: 70px;
+        }
+        @include sm {
+            display: none;
+        }
+        @include ssm {
+            right: -1%;
+            top: 17%;
+            width: 102%;
+            display: block;
+            background-repeat: repeat;
+        }
+    }
+    .heroBg img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        @include sm {
+            object-fit: cover;
+            left: auto;
+            right: 0;
+        }
+        @include ssm {
+            display: none;
+        }
+    }
+    &-content {
+        position: relative;
+        z-index: 9;
+        h1 {
+            margin-bottom: 25px;
+        }
+        p {
+            @include font-28;
+            margin-bottom: 38px;
+            max-width: 340px;
+            line-height: normal;
+            @include mmd {
+                margin-inline: auto;
+            }
+            @include sm {
+                font-size: 25px;
+            }
+        }
+        & .btn {
+            padding: 16px 28px;
+            border-radius: 17px;
+            border: 1px solid #770017;
+            background: #141726;
+            white-space: nowrap;
+            justify-content: center;
+            @include font-30;
+            max-width: 334px;
+            width: 100%;
+            color: $white;
+            @include sm{
+                padding: 10px 15px;
+                border-radius: 8px;
+                width: 45%;
+                justify-content: center;
+            }
+            img{
+                max-width: 130px;
+            }
+            &.bg-gradient {
+                background: linear-gradient(180deg, #4ECBC5 0%, #BE03FB 100%) !important;
+            }
+        }
+        a.boxed-btn.transparent {
+            background: rgba(254, 254, 181, 0.30);
+            color: $white;
+            text-shadow: 2px 2px 0px #0B0903;
+            box-shadow: none;
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: #0B0903;
+            font-family: $font_FormulaCondensedBold;
+            @include font-40;
+            font-style: normal;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding-bottom: 12px;
+            @include sm{
+                min-width: calc(100% - 80px);
+                max-width:  calc(100% - 80px);
+                width:  calc(100% - 80px);
+                display: block;
+            }
+        }
+        .socials {
+            border-radius: 11.689px;
+            border: 1.461px solid #0B0903;
+            padding: 13px;
+            gap: 10px;
+            & a {
+                --width: 73px;
+                width: var(--width);
+                height: var(--width);
+                padding: 0;
+                flex: 0 0 auto;
+            }
+            a:hover {
+                color: $black;
+                background: transparent;
+                border: 1.461px solid $red;
+                box-shadow: 2.384px 2.384px 0px 0px $red;
+            }
+            .responsiveSocial{
+                display: none; 
+                @include mmd{
+                 display: none;
+                }
+                 .socials {
+                     border-radius: 11.689px;
+                     border: 0 !important;
+                     padding: 0 !important;
+                     gap: 10px;
+                     a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                     }
+                 }
+             }
+        }
+    }
+
+    .banner-social{
+        @include mmd{
+            display: none !important;
+        }
+    }
+    .pdf{
+        max-width: 80px;
+        margin-right: 15px;
+    }
+}
+
+.copytoclipboard-inner {
+    margin-top: 88px;
+    @include xl {
+        margin-top: 64px;
+    }
+    @include lg {
+        margin-top: 50px;
+    }
+    @include mmd {
+        margin-top: 40px;
+        justify-content: center;
+    }
+    @include sm {
+        margin-top: 30px;
+    }
+}
